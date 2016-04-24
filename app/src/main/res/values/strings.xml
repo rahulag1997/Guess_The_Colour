@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Guess The Colour</string>
+    <string name="play">PLAY</string>
+    <string name="highScore">HIGHSCORE</string>
+    <string name="exit">EXIT</string>
+    <string name="question">QUESTION</string>
+    <string name="option_a">OPTION A</string>
+    <string name="timer">TIMER</string>
+    <string name="option_b">OPTION B</string>
+    <string name="option_c">OPTION C</string>
+    <string name="option_d">OPTION D</string>
+    <string name="game_over">GAME OVER!</string>
+    <string name="score">SCORE :</string>
+    <string name="highest">HIGHEST :</string>
+    <string name="back_to_main_menu">BACK TO MAIN MENU</string>
+    <string name="help">HELP</string>
+    <string name="welcome">WELCOME</string>
+    <string name="helpPara">The objective of the Game is to identify the colour in which the text is written and not what is written. \n\nNOTE: You need to be fast as a timer keeps ticking \n\nThe game is over if you select the wrong answer or the timer runs out.</string>
+    <string name="options">OPTIONS</string>
+    <string name="title_activity_options">options</string>
+    <string name="back">BACK</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+</resources>
