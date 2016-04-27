@@ -17,8 +17,8 @@ import android.widget.Toast;
 
 import static java.lang.Math.random;
 import static java.lang.Math.round;
-//import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class Game extends AppCompatActivity
 {
@@ -77,11 +77,11 @@ public class Game extends AppCompatActivity
         score=0;
         timerTextField=(TextView)findViewById(R.id.timer);
         d=options[0].getBackground();
-        /*AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice("YOUR_DEVICE_HASH")
                 .build();
-        mAdView.loadAd(adRequest);*/
+        mAdView.loadAd(adRequest);
 
     }
 
