@@ -23,7 +23,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REST HIGHSCORE"
+        android:text="@string/reset_highscore"
         android:id="@+id/button"
         android:layout_below="@+id/soundButton"
         android:layout_marginTop="30dp"

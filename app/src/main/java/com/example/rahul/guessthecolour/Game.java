@@ -96,15 +96,6 @@ public class Game extends AppCompatActivity
         int b2=((int)round(a2*10))%10;
         question.setTextColor(colors[b2]);
         answer=colours[b2];
-        /*
-        //question background colour
-        int b3=b2;
-        while(b3==b1 || b3==b2)
-        {
-            double a3=random();
-            b3=((int)round(a3*10)%10);
-        }
-        question.setBackgroundColor(colors[b3]);*/
 
         //options
         int i=0;
