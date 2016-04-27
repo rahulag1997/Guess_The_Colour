@@ -13,11 +13,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static java.lang.Math.random;
 import static java.lang.Math.round;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
+import java.io.IOException;
 
 public class Game extends AppCompatActivity
 {
@@ -45,8 +48,8 @@ public class Game extends AppCompatActivity
     };
     Drawable d;
     int colors[]={Color.BLUE,Color.RED,Color.rgb(255,102,0),Color.GREEN,Color.rgb(102,51,153),Color.BLACK,Color.YELLOW,Color.rgb(102,51,00),Color.GRAY,Color.rgb(255,00,128)};
-    //final MediaPlayer rs = MediaPlayer.create(this,R.raw.success);
-    //final MediaPlayer ws = MediaPlayer.create(getApplicationContext(), R.raw.gameover);
+    MediaPlayer rs;
+    MediaPlayer ws;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -63,6 +66,10 @@ public class Game extends AppCompatActivity
         shuffle();
         time=2500;
         timer.start();
+        try{
+            rs = MediaPlayer.create(this, R.raw.success);
+            ws=  MediaPlayer.create(getApplicationContext(), R.raw.gameover);
+        }catch (Exception e) {Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show();};
     }
 
     private void setup()
@@ -172,9 +179,18 @@ public class Game extends AppCompatActivity
     }
     public void RightAnswer(final int i)
     {
+        if(rs.isPlaying())
+        {
+            rs.stop();
+            try {
+                rs.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        rs.start();
         score++;
         time-=10;
-        //rs.start();
         options[i].setBackgroundColor(Color.GREEN);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -188,6 +204,7 @@ public class Game extends AppCompatActivity
     }
     public void WrongAnswer(final int i)
     {
+        ws.start();
         options[i].setBackgroundColor(Color.RED);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -195,7 +212,6 @@ public class Game extends AppCompatActivity
                 options[i].setBackground(d);
             }
         }, 500);
-        //ws.start();
         gameOver();
     }
     public void gameOver()
